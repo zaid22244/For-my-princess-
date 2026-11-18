@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8f315b">
+<title>For Vaishnavi, My Forever Princess ♡</title>
+<style>
+:root{--rose:#8f315b;--pink:#f9dce7;--cream:#fff8f5;--gold:#d6ad65}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#5d2942;font-family:Georgia,'Times New Roman',serif;background:radial-gradient(circle at 15% 10%,#fff 0 2%,transparent 26%),linear-gradient(145deg,#fff5f7,#f8dce8 52%,#f5e8df);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:23px 23px}
+.wrap{width:min(920px,92%);margin:auto;padding:34px 0 55px;position:relative}
+.top{text-align:center;font:12px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#a45c78}
+.card{margin:20px auto 0;max-width:720px;padding:clamp(25px,6vw,58px);text-align:center;border:1px solid rgba(190,119,145,.35);border-radius:28px;background:rgba(255,251,249,.82);box-shadow:0 22px 70px rgba(112,48,75,.14);backdrop-filter:blur(8px);position:relative}
+.crown{font-size:42px;filter:drop-shadow(0 4px 5px #d6ad6570)}
+h1{font-size:clamp(38px,8vw,68px);line-height:1.02;font-weight:normal;margin:13px 0 8px;color:#873653}
+h1 span{font-style:italic;color:#bd6687}
+.subtitle{font:12px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#a66a7f;margin:17px 0 25px}
+.rose{font-size:27px;letter-spacing:8px;margin:12px}
+.intro{font-size:clamp(17px,3vw,21px);line-height:1.7;max-width:540px;margin:0 auto;color:#75445a}
+button{border:0;border-radius:999px;padding:14px 24px;background:linear-gradient(110deg,#9b3c62,#c66f8c);color:white;font:14px Arial,sans-serif;letter-spacing:.5px;box-shadow:0 8px 20px #9b3c6233;cursor:pointer;margin:12px 6px;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-2px);box-shadow:0 12px 25px #9b3c6244}
+button.secondary{background:#fff;border:1px solid #d8a5b8;color:#8f315b;box-shadow:none}
+.letter{display:none;margin:27px auto 0;padding:24px 22px;max-width:560px;border-top:1px solid #e9c7d4;border-bottom:1px solid #e9c7d4;font-size:19px;line-height:1.8;animation:rise .8s ease both}
+.letter.show{display:block}
+.signature{font-style:italic;color:#a34e70;font-size:22px;margin-top:18px}
+.promise{display:none;margin:20px auto 0;color:#9a4969;font-size:18px;line-height:1.7}
+.promise.show{display:block;animation:rise .8s ease both}
+.foot{font:11px Arial,sans-serif;letter-spacing:2px;color:#a66a7f;margin-top:30px}
+.float{position:fixed;top:-30px;z-index:0;pointer-events:none;animation:fall linear forwards;opacity:.8}
+@keyframes fall{to{transform:translateY(110vh) rotate(420deg);opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.wrap{padding-top:22px}.card{border-radius:22px}.subtitle{letter-spacing:2px}.letter{font-size:17px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top">A little world made just for you</div>
+  <section class="card">
+    <div class="crown">♕</div>
+    <div class="rose">🌹 ✧ 💗 ✧ 🌹</div>
+    <h1>My Forever<br><span>Princess</span></h1>
+    <div class="subtitle">Happy Princess Day, Vaishnavi</div>
+    <p class="intro">If I could wrap all my affection into one little page, it would look something like this — soft, lovely, and made only for you.</p>
+    <button id="openBtn">Open my heart 💌</button>
+    <div class="letter" id="letter">
+      You are not just my princess, Vaishnavi. You are my happiness, my favourite person, and my forever love. ❤️
+      <div class="signature">With all my love, always. 🌷</div>
+    </div>
+    <div>
+      <button class="secondary" id="surpriseBtn">One more little surprise ✨</button>
+    </div>
+    <div class="promise" id="promise">In every little moment and every new tomorrow, I hope you always feel cherished, valued, and loved. If I had to choose again, my heart would still choose you. 💞</div>
+    <div class="foot">YOU ARE MY MOST BEAUTIFUL THOUGHT ♡</div>
+  </section>
+</main>
+<script>
+const openBtn=document.getElementById('openBtn'), letter=document.getElementById('letter');
+const surpriseBtn=document.getElementById('surpriseBtn'), promise=document.getElementById('promise');
+openBtn.addEventListener('click',()=>{letter.classList.add('show');openBtn.textContent='My heart is yours ❤️';openBtn.disabled=true;});
+surpriseBtn.addEventListener('click',()=>{promise.classList.add('show');surpriseBtn.textContent='Always and forever 💗';});
+function petal(){const el=document.createElement('div');el.className='float';el.textContent=['🌸','💗','🌹','✨'][Math.floor(Math.random()*4)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(14+Math.random()*17)+'px';el.style.animationDuration=(7+Math.random()*7)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),15000);}
+setInterval(petal,850);
+</script>
+</body>
+</html>
